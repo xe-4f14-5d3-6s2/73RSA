@@ -73,3 +73,10 @@ def encrypt(message: str, key: int, n: int):
   c = [(m ** key) % n for m in text_to_number(message)]
 
   return ".".join(c)
+
+def decrypt(digest: str, key: int, n: int):
+  message = number_to_text(
+    [(int(c)**key) % n for c in digest.split(".")]
+  )
+
+  return message
