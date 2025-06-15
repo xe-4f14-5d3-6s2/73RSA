@@ -44,3 +44,12 @@ def mod_inverse(e:int, lambda_n:int):
     raise ValueError("No existe el inverso multiplicativo modular de e y lambda(n) porque no son coprimos.")
   else:
     return x % lambda_n
+
+
+def text_to_number(text:str):
+  n = [ord(c) for c in text]
+  return n
+
+def number_to_text(ns: list[int]):
+  c = [chr(n) for n in ns]
+  return ''.join(c)
