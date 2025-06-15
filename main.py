@@ -22,3 +22,9 @@ def random_prime_number(bits:int) -> int:
 
     if is_prime(n):
       return n
+
+def mcm(x1:int, x2:int) -> int:
+  if x1 == 0 or x2 == 0:
+    return 0
+  
+  return abs(x1 * x2) // math.gcd(x1, x2)
