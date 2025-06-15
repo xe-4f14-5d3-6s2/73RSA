@@ -14,3 +14,11 @@ def is_prime(number:int) -> bool:
     if number % i == 0:
       return False
   return True
+
+def random_prime_number(bits:int) -> int:
+  while True:
+    n = random.getrandbits(bits)
+    n += 1 if n % 2 == 0 else 0
+
+    if is_prime(n):
+      return n
