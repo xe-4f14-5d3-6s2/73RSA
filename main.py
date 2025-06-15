@@ -53,3 +53,18 @@ def text_to_number(text:str):
 def number_to_text(ns: list[int]):
   c = [chr(n) for n in ns]
   return ''.join(c)
+
+
+def generate_keys():
+  p = random_prime_number(11)
+  q = random_prime_number(11)
+
+  n = p * q
+
+  e = 65537
+
+  lambda_n = mcm(p-1, q-1)
+
+  d = mod_inverse(e, lambda_n)
+
+  return (e, d, n)
