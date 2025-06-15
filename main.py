@@ -37,3 +37,10 @@ def extended_mcd(a:int, b:int) -> tuple[int, int, int]:
     x = y1
     y = x1 - (a // b) * y1
     return (mcd, x, y)
+
+def mod_inverse(e:int, lambda_n:int):
+  mcd, x, _ = extended_mcd(e, lambda_n)
+  if mcd != 1:
+    raise ValueError("No existe el inverso multiplicativo modular de e y lambda(n) porque no son coprimos.")
+  else:
+    return x % lambda_n
