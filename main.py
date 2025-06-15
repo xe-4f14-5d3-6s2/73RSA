@@ -28,3 +28,12 @@ def mcm(x1:int, x2:int) -> int:
     return 0
   
   return abs(x1 * x2) // math.gcd(x1, x2)
+
+def extended_mcd(a:int, b:int) -> tuple[int, int, int]:
+  if b == 0:
+    return (a, 1, 0)
+  else:
+    mcd, x1, y1 = extended_mcd(b, a % b)
+    x = y1
+    y = x1 - (a // b) * y1
+    return (mcd, x, y)
