@@ -68,3 +68,8 @@ def generate_keys():
   d = mod_inverse(e, lambda_n)
 
   return (e, d, n)
+
+def encrypt(message: str, key: int, n: int):
+  c = [(m ** key) % n for m in text_to_number(message)]
+
+  return ".".join(c)
