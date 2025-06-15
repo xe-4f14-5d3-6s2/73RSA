@@ -15,9 +15,9 @@ def is_prime(number:int) -> bool:
       return False
   return True
 
-def random_prime_number(bits:int) -> int:
+def random_prime_number() -> int:
   while True:
-    n = random.getrandbits(bits)
+    n = random.randint(16, 2047)
     n += 1 if n % 2 == 0 else 0
 
     if is_prime(n):
@@ -56,8 +56,8 @@ def number_to_text(ns: list[int]):
 
 
 def generate_keys():
-  p = random_prime_number(11)
-  q = random_prime_number(11)
+  p = random_prime_number()
+  q = random_prime_number()
 
   n = p * q
 
