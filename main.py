@@ -70,7 +70,7 @@ def generate_keys():
   return (e, d, n)
 
 def encrypt(message: str, key: int, n: int):
-  c = [(m ** key) % n for m in text_to_number(message)]
+  c = [f"{(m ** key) % n}" for m in text_to_number(message)]
 
   return ".".join(c)
 
